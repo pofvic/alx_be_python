@@ -1,5 +1,7 @@
-number = int(input('Enter a number to see '))
 
-for num in range(1, 11):
-    result = number * num
-    print(f"{number} * {num} = {result}")
+# Prompt user for a number
+number = int(input("Enter a number to see its multiplication table: "))
+
+for i in range(1, 10):
+    product = number * i
+    print(f"{number} * {i} = {product}")
