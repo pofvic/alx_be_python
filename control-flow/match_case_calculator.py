@@ -1,27 +1,26 @@
-first_number = int(input("Enter the first number: "))
-second_number = int(input("Enter the second number: "))
 
-operation = input("(+, -, *, /): ")
+# Prompt user for input
+num1 = float(input("Enter the first number: "))
+num2 = float(input("Enter the second number: "))
 
+operation = input("Choose the operation (+, -, *, /): ")
 
+# Perform calculation using match case
 match operation:
-    case "+":
-        result = first_number + second_number
-    case "-":
-        result = first_number - second_number
+    case '+':
+        result = num1 + num2
+    case '-':
+        result = num1 - num2
     case '*':
-        result = first_number * second_number
-    case "/":
-        result = first_number / second_number
-
-        if second_number == 0:
-            result = first_number / second_number
+        result = num1 * num2
+    case '/':
+        if num2 != 0:
+            result = num1 / num2
         else:
-            result = "Error: Division by zero is not allowed"
-
+            print("Cannot divide by zero.")
+            result = None
     case _:
-        result = "Error: Invalid operations"
+        print(f"Invalid operation '{operation}'. Please choose from '+', '-', '*', '/'.")
 
-
-print("The result is", result)
-
+if result is not None:
+    print(f"The result is {result}.")
