@@ -1,20 +1,20 @@
-FAHRENHEIT_TO_CELSIUS_FACTOR = 5 / 9
-CELSIUS_TO_FAHRENHEIT_FACTOR = 9 / 5
+# Global conversion factors
+FAHRENHEIT_TO_CELSIUS_FACTOR = (5 / 9)
+CELSIUS_TO_FAHRENHEIT_FACTOR = (9 / 5)
 
-
+# Conversion functions
 def convert_to_celsius(fahrenheit):
     return (fahrenheit - 32) * FAHRENHEIT_TO_CELSIUS_FACTOR
-
 
 def convert_to_fahrenheit(celsius):
     return (celsius * CELSIUS_TO_FAHRENHEIT_FACTOR) + 32
 
-
+# Main function for user interaction and handling value errors
 def main():
     while True:
         try:
-            temp_input = input("Enter the temperature to convert (or 'q' to quit): ")
-            if temp_input.strip().lower() == 'q':
+            temp_input = input("Enter the temperature to convert (or 'q' to quit): ").strip()
+            if temp_input.lower() == 'q':
                 print("Exiting the program.")
                 break
 
@@ -36,7 +36,6 @@ def main():
         if cont != 'y':
             print("Goodbye!")
             break
-
 
 if __name__ == "__main__":
     main()
